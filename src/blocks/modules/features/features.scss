@@ -1,0 +1,75 @@
+$items: 9;
+$wheel-size: 700px;
+$gap: 120px;
+$radius: (
+    $wheel-size / 2
+);
+
+@function gap-angle($gap, $radius) {
+    $angle-rad: $gap / $radius;
+    $angle-deg: $angle-rad * 180deg / 3.1415926535;
+    @return $angle-deg;
+}
+
+$step-angle: gap-angle($gap, $radius);
+
+$start-offset: $step-angle * -2;
+
+// Раскладываем элементы последовательно
+@for $i from 1 through $items {
+    $current-angle: (
+        ($i - 1) * $step-angle) + $start-offset;
+
+    .f-controls__item:nth-child(#{$i}) {
+        transform: translate(-50%, -50%) rotate($current-angle) translate($radius) rotate(-$current-angle
+        );
+}
+}
+
+.features {
+    position: relative;
+    overflow: hidden;
+
+    &__controls {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $wheel-size;
+        height: $wheel-size;
+        left: -570px;
+        z-index: 10;
+
+        &-frame {
+            position: absolute;
+            left: calc(100% - 130px);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+
+        &-screen {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            transition: none;
+
+            &.is-active {
+                pointer-events: auto;
+                opacity: 1;
+            }
+        }
+    }
+}
