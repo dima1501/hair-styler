@@ -8166,7 +8166,6 @@ bem-tools-create@bem-tools/bem-tools-create:
     imagemin-webp: "npm:^6.0.0"
     imagemin-zopfli: "npm:^7.0.0"
     lint-staged: "npm:^12.3.5"
-    postcss: "npm:^8.4.8"
     postcss-scss: "npm:^4.0.3"
     require-dir: "npm:^1.2.0"
     sass: "npm:^1.49.9"
@@ -12698,7 +12697,7 @@ bem-tools-create@bem-tools/bem-tools-create:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.0, postcss@npm:^8.3.11, postcss@npm:^8.3.6, postcss@npm:^8.4.19, postcss@npm:^8.4.8, postcss@npm:^8.5.6":
+"postcss@npm:^8.3.0, postcss@npm:^8.3.11, postcss@npm:^8.3.6, postcss@npm:^8.4.19, postcss@npm:^8.5.6":
   version: 8.5.6
   resolution: "postcss@npm:8.5.6"
   dependencies:
